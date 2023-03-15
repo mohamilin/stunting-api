@@ -1,11 +1,11 @@
 {
-  "name": "gamer-tag",
+  "name": "stunting-api",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www",
-    "test": "jest --coverage",
+    "migrate:dev": "npx sequelize-cli db:migrate",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prettier": "prettier --check **/*.js",
