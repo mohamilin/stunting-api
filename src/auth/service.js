@@ -72,10 +72,9 @@ const refreshToken = async (token) => {
   }
 };
 
-const logout = async (payload) => {
-  const refresh_token = payload.refresh_token;
+const logout = async (token) => {
   const refreshTokenDoc = await Model.tokens.findOne({
-    where: { token: refresh_token },
+    where: { token },
   });
 
   if (!refreshTokenDoc) {

@@ -22,7 +22,7 @@ const register = CatchAsync(async (req, res) => {
 // register default as kader
 const registerNakes = CatchAsync(async (req, res) => {
   let payload = req.body;
-  payload.role = 'nakes'
+  payload.role = "nakes";
   const user = await AuthService.createUser(payload);
   const token = await TokenService.generateAuthTokens(user);
 
@@ -55,10 +55,13 @@ const refreshToken = catchAsync(async (req, res) => {
 });
 
 const logout = CatchAsync(async (req, res) => {
-  await AuthService.logout(req.body);
+  // const token = JSON.parse(req.body)
+  console.log(req.body, 'req.body');
+  const { token } = req.query;
+
+  await AuthService.logout(token);
   res.status(httpStatus.OK).send({ message: "Logout Success" });
 });
-
 
 module.exports = {
   register,
