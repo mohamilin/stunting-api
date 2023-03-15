@@ -21,7 +21,7 @@ module.exports = {
       week_id: {
         type: Sequelize.INTEGER
       },
-      toodler_id: {
+      toddler_id: {
         type: Sequelize.INTEGER
       },
       nakes_id: {

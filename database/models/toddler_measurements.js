@@ -10,6 +10,10 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
+      toddler_measurements.belongsTo(models.category_weeks, {
+        as: 'week',
+        foreignKey: 'week_id'
+      })
       // define association here
     }
   }
@@ -18,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
     tinggi_badan: DataTypes.FLOAT,
     lingkar_lengan_atas: DataTypes.FLOAT,
     week_id: DataTypes.INTEGER,
-    toodler_id: DataTypes.INTEGER,
+    toddler_id: DataTypes.INTEGER,
     nakes_id: DataTypes.INTEGER,
     created_by: DataTypes.INTEGER,
     updated_by: DataTypes.INTEGER,
@@ -26,6 +30,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'toddler_measurements',
+    underscored: false
   });
   return toddler_measurements;
 };

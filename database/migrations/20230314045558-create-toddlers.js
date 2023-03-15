@@ -10,7 +10,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       nik: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       fullname: {
         type: Sequelize.STRING
@@ -37,9 +37,13 @@ module.exports = {
         type: Sequelize.FLOAT
       },
       stunting: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.BOOLEAN,
+        defaultValue: false
       },
       nakes_id: {
+        type: Sequelize.INTEGER
+      },
+      validator_id: {
         type: Sequelize.INTEGER
       },
       created_by: {

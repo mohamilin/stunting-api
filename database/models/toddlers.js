@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 const {
   Model
-} = require('sequelize');
+} = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class toddlers extends Model {
     /**
@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   toddlers.init({
-    nik: DataTypes.INTEGER,
+    nik: DataTypes.STRING,
     fullname: DataTypes.STRING,
     alamat: DataTypes.TEXT,
     tempat_lahir: DataTypes.STRING,
@@ -23,14 +23,18 @@ module.exports = (sequelize, DataTypes) => {
     berat_badan: DataTypes.FLOAT,
     tinggi_badan: DataTypes.FLOAT,
     lingkar_lengan_atas: DataTypes.FLOAT,
-    stunting: DataTypes.BOOLEAN,
+    stunting: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    },
     nakes_id: DataTypes.INTEGER,
+    validator_id: DataTypes.INTEGER,
     created_by: DataTypes.INTEGER,
     updated_by: DataTypes.INTEGER,
-    deleted_by: DataTypes.INTEGER
+    deleted_by: DataTypes.INTEGER,
   }, {
     sequelize,
-    modelName: 'toddlers',
+    modelName: "toddlers",
   });
   return toddlers;
 };
