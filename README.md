@@ -21,7 +21,7 @@ Set  environment variables:
 ```bash
 cp .env.example .env
 ```
-# buka .env kemudian modifikasi environment:
+buka .env kemudian modifikasi environment:
 ```bash
 NODE_ENV=development
 
