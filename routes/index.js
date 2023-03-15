@@ -2,6 +2,11 @@ const express = require("express");
 
 const AuthRoutes = require("./auth");
 const UserRoutes = require("./users");
+const ToddlerRoutes = require("./toddlers");
+const NakesRoutes = require("./nakes");
+const WeekRoutes = require("./weeks");
+const MeasurementRoutes = require("./measurements");
+const KaderRoutes = require("./kader");
 
 const router = express.Router();
 router.get('/', (req, res) => {
@@ -11,5 +16,10 @@ router.get('/', (req, res) => {
 })
 router.use("/auth", AuthRoutes);
 router.use("/users", UserRoutes);
+router.use("/toddlers", ToddlerRoutes);
+router.use("/nakes", NakesRoutes);
+router.use("/weeks", WeekRoutes);
+router.use("/kader", KaderRoutes);
+router.use("/measurements", MeasurementRoutes);
 
 module.exports = router;
